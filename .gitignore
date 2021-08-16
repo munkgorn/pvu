@@ -111,3 +111,5 @@ certs/
 .DS_Store
 
 .idea/
+.history
+.vercel
