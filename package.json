@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "fastify start -l info server.js",
+    "start": "node server.js",
     "build": "pm2 start server.js"
   },
   "repository": {

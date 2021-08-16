@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
     // res.setHeader('Access-Control-Allow-Credentials', true); 
     next()
 })
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     console.log('call ')
     res.send('API')
 })
