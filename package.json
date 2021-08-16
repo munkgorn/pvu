@@ -1,0 +1,38 @@
+{
+  "name": "pvn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "fastify start -l info server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/tikkubzaza/pvu.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fastify": "^3.20.2",
+    "fastify-autoload": "^3.8.0",
+    "fastify-axios": "^1.2.3",
+    "fastify-cli": "^2.13.0",
+    "fastify-mongodb": "^4.0.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-redis": "^4.3.1",
+    "fastify-swagger": "^4.8.3",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "path": "^0.12.7",
+    "qs": "^6.10.1",
+    "tap": "^15.0.9",
+    "util": "^0.12.4",
+    "vercel": "^23.1.2"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.3"
+  }
+}
