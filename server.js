@@ -1,30 +1,28 @@
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
 require('dotenv').config();
 let moment = require('moment-timezone'); // require
 
+const port = 4000;
+const app = express()
 
-
-const fastify = require("fastify")({
-    logger:true
-//   ignoreTrailingSlash: true,
-//   logger: {
-//     timestamp: () => `,"@timestamp":"${moment().format()}"`,
-//     messageKey: "message",
-//   },
-});
-fastify.get("/", function (request, reply) {
-  reply.send("Hello API ติ๊ก");
-});
-
-// Run the server!
-fastify.listen(4444, function (err, address) {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-  fastify.log.info(`server listening on ${address}`);
-});
+app.use(cors());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    //res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    // res.setHeader('Access-Control-Allow-Credentials', true); 
+    next()
+})
+app.get('/', (req, res) => {
+    console.log('call ')
+    res.send('API')
+})
 
 // const fastify = require('fastify')({
 //     ignoreTrailingSlash: true,
@@ -56,3 +54,8 @@ module.exports = async function (fastify, opts) {
 module.exports.options = {
     ignoreTrailingSlash: true
 }
+
+
+app.listen(port, () => {
+    console.log(`Start server at port ${port}.`)
+})
